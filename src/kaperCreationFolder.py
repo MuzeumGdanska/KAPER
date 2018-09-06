@@ -1,16 +1,9 @@
 import os
 import re
 import datetime
-DATE_CREATED = ""
 
-MasterTEMPArray = []
 MTempDict = {}
-GotoweTEMPArray = []
-PostprodukcjaTEMPArray = []
 
-#base_folder_structure = os.listdir('.')
-#base_path = os.path.abspath('.')
-#def scanFolderFileExtensions(listdir, filePaths = base_path):
 def ms_path(path):
     if not os.path.exists(path):
         try:
