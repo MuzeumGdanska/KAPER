@@ -14,11 +14,14 @@ PostprodukcjaTEMPArray = []
         
 def main(tk_path_var, selectedMode, createInvFoldersBool):
     # print(createInvFoldersBool.get()) #>>1/0
+    createInvFoldersBool.set(1)
     if bool(createInvFoldersBool.get()) is False:
         kaper_create_folders(tk_path_var,selectedMode)
     if bool(createInvFoldersBool.get()) is True:
         invKaperCreateFolders(tk_path_var,selectedMode)
-
+def testPrint():
+    print("hello world")
+    
 def ms_path(path):
     if not os.path.exists(path):
         try:
@@ -26,6 +29,8 @@ def ms_path(path):
         except OSError as exception:
             if exception.errno != errno.EEXIST:
                 range
+                print("Wystapił błąd 212 - nie można utworzyć folderu. Skontaktuj się z administratorem programu")
+
 def date_validate(date_text):
     try:
         datetime.datetime.strptime(date_text, '%Y-%m-%d')
@@ -52,7 +57,7 @@ def scanFolderFileExtensions(folderPath):
             filePath = os.path.join(folderPath, item)
             fileDate = getModifiedDateFromFile(filePath)
             GTempDict[filePath] = fileDate
-        elif os.path.splitext(item)[1] == '.tiff' or os.path.splitext(item)[1] == '.TIFF':
+        elif os.path.splitext(item)[1] == '.tiff' or os.path.splitext(item)[1] == '.TIFF' or os.path.splitext(item)[1] == '.tif' or os.path.splitext(item)[1] == '.TIF':
             filePath = os.path.join(folderPath, item)
             fileDate = getModifiedDateFromFile(filePath)
             GTempDict[filePath] = fileDate
@@ -84,10 +89,13 @@ def createKaperInvNumberDateAndFormatFolders(filePath, date):
 def moveFileToDestinyPath(filePath, DestinyPath):
     originPath = os.path.split(filePath)[0]
     fileName = os.path.split(filePath)[1]
+    countPath = os.path.join(DestinyPath, fileName)
+    if len(countPath) > 254:
+        print("Ostrzeżenie przed zbyt długa nazwą sciezki plików - powyżej 254 znaków")
     try:
         os.rename(filePath,os.path.join(DestinyPath, fileName))
     except WindowsError:
-        raise WindowsError("I cannot rename/move file! Program error")
+        raise WindowsError("I cannot rename/move file! Program error. Sprawdź nazwę ścieżki katalogu który wybrałeś.")
     
 def getMasterFolderFromDatePath(datePath):
     return os.path.join(datePath, '00_master')

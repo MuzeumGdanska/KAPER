@@ -13,6 +13,7 @@ def browse_button():
     filename = filedialog.askdirectory()
     tk_path_var.set(filename)
     print(filename)
+    
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
@@ -22,6 +23,7 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
 
     return os.path.join(base_path, relative_path)
+
 Logo = resource_path("mg-logo.png")
 root = Tk()
 root.title("Muzeum Gdansk - Kaper Tools v.1.2")
