@@ -1,6 +1,9 @@
 # KAPER TOOL - narzędzie do usprawniania pracy przy korzystaniu ze standardu nazewnictwa plików KAPER przy digitalizacji zbiorów.
 
-# 0.93 - Program nie jest jeszcze w 100% stabilny. Trwają pracę nad wydaniem wersji produkcyjnej. 
+# 0.97 - Aktualizacja wprowadza okienkowe powiadomienia błędów. Zrefaktoryzowano kod i przyśpieszono działanie.
+#	   - Aktualnie działającą funkcją jest "Rozmieszczanie plików po katalogach" wg standardu KAPER
+#	   - Nie wprowadzono opcji zapisu logów.
+
 Aktualnie działające funkcje:
 
  + Rozmieczanie plików po katalogach
@@ -8,7 +11,7 @@ Aktualnie działające funkcje:
 # Trwają pracę nad
  - Masową zmianą danych w metadanych EXIF
  - Masowym dostosowywaniem nazw plików do standardu KAPER
-
+ - Archiwizowaniem logów z pracy programu.
 
 Wszelkie problem z aplikacją prosimy zgłaszać pod adresem h.kotarski@muzeumgdansk.pl
 

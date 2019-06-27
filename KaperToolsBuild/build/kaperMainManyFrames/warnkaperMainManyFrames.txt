@@ -13,5 +13,5 @@ missing module named vms_lib - imported by platform, E:\_BOSKIE_SKRYPTY_\KAPERTO
 missing module named termios - imported by tty, E:\_BOSKIE_SKRYPTY_\KAPERTOOLS - DEV\kaperMainManyFrames.py, getpass
 missing module named grp - imported by shutil, tarfile, E:\_BOSKIE_SKRYPTY_\KAPERTOOLS - DEV\kaperMainManyFrames.py
 missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, E:\_BOSKIE_SKRYPTY_\KAPERTOOLS - DEV\kaperMainManyFrames.py, netrc, getpass
-missing module named _dummy_threading - imported by dummy_threading, E:\_BOSKIE_SKRYPTY_\KAPERTOOLS - DEV\kaperMainManyFrames.py
 missing module named 'org.python' - imported by copy, E:\_BOSKIE_SKRYPTY_\KAPERTOOLS - DEV\kaperMainManyFrames.py, xml.sax
+missing module named _dummy_threading - imported by dummy_threading, E:\_BOSKIE_SKRYPTY_\KAPERTOOLS - DEV\kaperMainManyFrames.py

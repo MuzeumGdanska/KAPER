@@ -1,12 +1,10 @@
 #KAPERTOOLS-Agatex Hubert Kotarski, Muzeum Gdańsk ###
-#Many Frames App
 #License: CC BY 3.0 PL
 import tkinter as tk                
 from tkinter import font  as tkfont
 from tkinter import filedialog
 import os, time, sys
-import kaperCreationFolder as kcf
-GBoolMode = 0
+import kaperCreationFolderRefactored as kcf
 
 class KaperApp(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -73,11 +71,10 @@ class KaperApp(tk.Tk):
         return self.GPathVar
 
 class StartPage(tk.Frame):
-
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.controller = controller
-        label = tk.Label(self, text="KAPER TOOLS APP 0.93", font=controller.title_font)
+        label = tk.Label(self, text="KAPER TOOLS 0.9.7", font=controller.title_font)
         label.pack(side="top", fill="x", pady=10)
 
         b1 = tk.Button(self, text="Standaryzacja plików KAPER",background='#d7d7d7',
@@ -102,7 +99,6 @@ class StartPage(tk.Frame):
         #exitB.pack(fill ="x")
 
 class PageOne(tk.Frame):
-
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.controller = controller
@@ -116,7 +112,6 @@ class PageOne(tk.Frame):
         b2.pack()
 
 class PageTwo(tk.Frame):
-    
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.controller = controller
@@ -132,12 +127,8 @@ class PageTwo(tk.Frame):
         bu2.config(height = 4)
         bu2.pack(fill="x")
         tk_path_var = controller.getGlobalPathVar()
-        checkboxKaperInvFolder = tk.Checkbutton(self, text = "Tworzy nadrzędny folder z numerem inwentarzowym",
+        checkboxKaperInvFolder = tk.Checkbutton(self, text = "Tworzy nadrzędny folder z numerem inwentarzowym (funkcja jest już domyślnie włączona)",
                                              variable = self.createInvFoldersBool, state = 'disable')
-        
-#Disable option with not creating inventory Number - old function is broken        
-##      checkboxKaperInvFolder = tk.Checkbutton(self, text = "Create inventory number folder for every item",
-##                                            variable = self.createInvFoldersBool)
         checkboxKaperInvFolder.pack();
 
         radioOne = tk.Radiobutton(self, text="Tylko dla wybranego folderu", variable=self.subfolderRadio, value=2,height=5,background='#d7d7d7')
@@ -195,6 +186,3 @@ class PageThree(tk.Frame):
 if __name__ == "__main__":
     app = KaperApp()
     app.mainloop()
-    #while True:
-     #   app.update_idletasks()
-      #  app.update()
